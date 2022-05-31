@@ -1,1 +1,2 @@
--e#!/bin/bash\ntr [A-Za-z] [N-Zn-zA-Ma-m]
+#!/bin/bash
+tr [A-za-z] [N-Zn-zA-Ma-m]
