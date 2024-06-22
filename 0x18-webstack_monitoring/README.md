@@ -1,5 +1,6 @@
 # Webstack monitoring
 
+Here  we learn the importance of measuring and monitoring data/server traffic using Datadog.
 This project invovled setting up Sumo Logic accounts to monitor server traffic
 on my three HBnB servers.
 
