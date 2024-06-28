@@ -1,21 +1,6 @@
 #!/usr/bin/env bash
-# Find the Gunicorn master process IDs using pgrep
+# Gracefully reload Gunicorn without downtime using pgrep and kill
 
-PGREP_OUTPUT=$(pgrep -f 'gunicorn.*')
-
-if [ -z "$PGREP_OUTPUT" ]; then
-    echo "No Gunicorn master process found."
-    exit 1
-fi
-echo "Reloading Gunicorn gracefully..."
-
-for PID in $PGREP_OUTPUT; do
-    if ps -p $PID > /dev/null; then
-        echo "Sending HUP signal to PID $PID"
-        kill -HUP $PID
-    else
-        echo "PID $PID no longer exists."
-    fi
-done
-
+echo "Reloading Gunicorn without downtime..."
+pgrep -f 'gunicorn.*' | xargs -I {} kill -HUP {}
 echo "Reload complete."
