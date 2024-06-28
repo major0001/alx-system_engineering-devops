@@ -1,9 +1,6 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Gracefully reload Gunicorn without downtime using pgrep and kill
+
 echo "Reloading Gunicorn without downtime..."
-
 pgrep -f 'gunicorn.*' | xargs -I {} kill -HUP {}
-
 echo "Reload complete."
-
