@@ -7,9 +7,6 @@ if [ -z "$PGREP_OUTPUT" ]; then
     echo "No Gunicorn master process found."
     exit 1
 fi
-
-# Loop through each PID and send HUP signal if the process exist
-
 echo "Reloading Gunicorn gracefully..."
 
 for PID in $PGREP_OUTPUT; do
