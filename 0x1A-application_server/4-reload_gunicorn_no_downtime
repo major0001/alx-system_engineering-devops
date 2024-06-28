@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#!/bin/bash
 
 # Gracefully reload Gunicorn without downtime using pgrep and kill
 echo "Reloading Gunicorn without downtime..."
