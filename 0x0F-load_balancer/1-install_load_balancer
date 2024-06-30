@@ -14,8 +14,8 @@ backend webservers
     server 61598-web-02 100.26.163.207:80 check
 "
 # Update packages
-#apt-get -y update
-#apt-get -y upgrade
+apt-get -y update
+apt-get -y upgrade
 
 # Add HAProxy PPA
 apt-get -y install software-properties-common
